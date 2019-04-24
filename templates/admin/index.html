@@ -1,0 +1,28 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{{ super() }}
+{% if not current_user.is_authenticated %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <p>
+                <a class="btn btn-primary" href="{{ url_for('security.login') }}">Login</a>
+            </p>
+            <p>
+                <a class="btn btn-primary" href="/"><i class="glyphicon glyphicon-chevron-left"></i>Back</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <p>
+                Тут будет введение по админке. Когда-нибудь.
+            </p>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock body %}
