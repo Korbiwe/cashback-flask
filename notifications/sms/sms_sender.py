@@ -15,14 +15,6 @@ env = Environment(
 
 class SmsSender:
     @staticmethod
-    async def start():
-        pass
-
-    @staticmethod
-    async def stop():
-        pass
-
-    @staticmethod
     def send_message(receivers, delay_until=None, sender=None, template='empty', **template_kwargs):
         for phone_number in receivers:
             try:

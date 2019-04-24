@@ -36,17 +36,6 @@ security_ctx = security.init_app(
 admin.init_app(app)
 jwt = JWT(app, authenticate, identity)
 
-# init flask-admin views
-# from auth.admin import init as init_auth_admin_models
-# init_auth_admin_models(admin)
-# from partners.admin import init as init_partners_models
-# init_partners_models(admin)
-# from clients.admin import init as init_clients_models
-# init_clients_models(admin)
-# from mlm.admin import init as init_mlm_models
-# init_mlm_models(admin)
-# from bonus.admin import init as init_bonus_models
-# init_bonus_models(admin)
 
 for module_name in Config.ENABLED_MODULES:
     module = importlib.import_module(module_name)
